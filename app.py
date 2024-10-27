@@ -32,7 +32,7 @@ from modules.currency import get_exchange_table
 # 用環境變數隱蔽金鑰
 # render.com 不支援 dotenv
 
-OPENAI_API_KEY = os.getnev("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key = OPENAI_API_KEY)
 
 
@@ -45,8 +45,8 @@ app = Flask(__name__)
 # TODO: 填入你的 CHANNEL_SECRET 與 CHANNEL_ACCESS_TOKEN
 # 跟Line 對接
 # 取得環境變數
-CHANNEL_SECRET = os.getnev("CHANNEL_SECRET") #"將此替換成你的_CHANNEL_SECRET"
-CHANNEL_ACCESS_TOKEN = os.getnev("CHANNEL_ACCESS_TOKEN") #"將此替換成你的_CHANNEL_ACCESS_TOKEN"
+CHANNEL_SECRET = os.getenv("CHANNEL_SECRET") #"將此替換成你的_CHANNEL_SECRET"
+CHANNEL_ACCESS_TOKEN = os.getenv("CHANNEL_ACCESS_TOKEN") #"將此替換成你的_CHANNEL_ACCESS_TOKEN"
 
 handler = WebhookHandler(CHANNEL_SECRET)
 configuration = Configuration(access_token=CHANNEL_ACCESS_TOKEN)
