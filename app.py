@@ -179,9 +179,9 @@ if __name__ == "__main__":
     print(f"若在本地測試請輸入指令開啟測試通道: ./ngrok http {port} ")
     # 啟動應用程式
     # 本機測試使用127.0.0.1 (就是指本機的意思), debug=True
-    # Heroku部署使用 0.0.0.0
+    # Heroku, render.com部署使用 0.0.0.0
     # PORT (通訊阜)
-    app.run(host="127.0.0.1", port=port, debug=True)
+    app.run(host="0.0.0.0", port=port, debug=True)
 
 
 # 如果程式有錯, app 會直接停止運作, 所以除錯完要重新跑一次 app 讓它開起來
